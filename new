@@ -37,7 +37,16 @@ def top_single_linked(my_list):
         k=my_list["first"]["info"]
     return k
 
-
+def invertNodes(node):
+    if node == None:
+        return None
+    if node['next'] == None:
+        return node
+    
+    inverted_nodes = invertNodes(node['next'])
+    node['next']['next'] = node
+    node['next'] = None
+    return inverted_nodes
 
 
 
